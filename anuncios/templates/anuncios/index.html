@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>NUESTRA PRIMERA VISTA FUERA DEL ADMIN</h1>
+    {% for user in users %}
+    <p>Nombre de usuario: {{user.username}}</p>
+    <p>Nombres: {{user.first_name}}</p>
+    <p>Apellidos: {{user.last_name}}</p>
+    {%endfor%}
+  </body>
+</html>
