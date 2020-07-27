@@ -1,0 +1,28 @@
+{% extends "anuncios/base.html" %}
+
+{% block title %}PUBLICAR UN ANUNCIO{% endblock %}
+
+{% block content %}
+<h1>PUBLICAR UN NUEVO ANUNCIO AQUIIIII !!!!!</h1>
+<div class="container">
+
+<div class="form-row">
+<div class="col-9">
+
+<form action="{% url "create_bulletin" %}" method="post">
+  {% csrf_token%}
+  <label >Titulo</label>
+  <input class="form-control" type="text" name="title" placeholder="Inserta un titulo" required>
+  <label>Precio</label>
+  <input class="form-control" type="number" name="price" placeholder="Q. precio" required>
+  <label>Descripcion</label>
+  <textarea class="form-control" name="description" rows="8" cols="80" placeholder="Escribe aqui la descripcion" required></textarea>
+  <input class="btn btn-primary" type="submit" value="Guardar">
+  <a class="btn btn-danger" href="{%url "index"%}">VOLVER A INICIO</a>
+</form>
+</div>
+</div>
+</div>
+
+
+{% endblock %}

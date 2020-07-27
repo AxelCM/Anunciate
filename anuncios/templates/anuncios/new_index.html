@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style type="text/css">
+      #navigation_bar{
+        padding-bottom: 2px;
+        padding-top: 2px;
+      }
+    </style>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <title></title>
+  </head>
+  <body>
+    <head>
+      <nav class="navbar navbar-light bg-primary" id="#navigation_bar" >
+        <a href="#" class="navbar-brand">ANUNCIATE GT</a>
+        <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"  href="#">
+          MENU
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a href="#" class="dropdown-item">OPCION 1</a>
+        </div>
+      </li>
+    </ul>
+
+        <div class="navbar-text">
+          <div class="dropdown" style="padding-right: 100px;">
+            <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false"  href="#">
+            {{request.user.username}}
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item" href="#">Salir</a>
+            </div>
+          </div>
+        </div>
+        <!-- <span class="navbar-text">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false"  href="#">
+              {{request.user.username}}
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a href="#" class="dropdown-item">SALIR</a>
+              </div>
+            </li>
+          </ul>
+        </span> -->
+
+      </nav>
+    </head>
+    <h1>NUESTRA PRIMERA VISTA FUERA DEL ADMIN</h1>
+    {% for user in users %}
+    <p>Nombre de usuario: {{user.username}}</p>
+    <p>Nombres: {{user.first_name}}</p>
+    <p>Apellidos: {{user.last_name}}</p>
+    {%endfor%}
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+</html>

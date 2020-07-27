@@ -1,15 +1,29 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>NUESTRA PRIMERA VISTA FUERA DEL ADMIN</h1>
-    {% for user in users %}
-    <p>Nombre de usuario: {{user.username}}</p>
-    <p>Nombres: {{user.first_name}}</p>
-    <p>Apellidos: {{user.last_name}}</p>
-    {%endfor%}
-  </body>
-</html>
+{% extends "anuncios/base.html" %}
+{% block title %}PAGINA DE INICIO{% endblock %}
+
+{% block content %}
+<div class="container">
+
+  <a align="center" class="btn btn-success" href="{%url "create_bulletin"%}">PUBLICAR ANUNCIO</a>
+
+    <h1 align="center">FEED DE ANUNCIOS</h1>
+
+    {% for b in bulletins  %}
+    <br>
+    <div class="card">
+      <h5 class="card-header">{{b.title}}</h5>
+      <div class="card-body">
+        <h5 class="card-title">{{b.price}}</h5>
+        <p class="card-text">
+          {{b.description}}
+        </p>
+        <a href="#" class="btn btn-primary">Ver Anuncio</a>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% block script %}
+{% endblock %}
+
+{% endblock %}
